@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>The Second Page</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: limegreen;
+            text-align: center;
+            text-shadow:
+                -2px 2px rgba(255, 0, 0, 0.5),
+                2px 2px rgba(0, 0, 255, 0.5);
+        }
+
+        table {
+            width: 100%;
+            height: 100vh;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        td {
+            border: 1px solid limegreen;
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        button {
+            font-size: 48px;
+            border-radius: 25px;
+            background-color: darkgrey;
+            color: lime;
+            text-shadow: 3px 0 4px limegreen;
+            padding: 20px 40px;
+            width: 100%;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="6"><h1>Clicker Game</h1></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="clicks">Clicks: 0</td>
+            <td colspan="2" id="multiplier">Multiplier: 1</td>
+            <td colspan="2" id="multiplierCost">Multiplier Cost: 100</td>
+        </tr>
+        <tr>
+            <td colspan="3"><button onclick="clicked()">Click</button></td>
+            <td colspan="3"><button onclick="multiplied()">Multiplier</button></td>
+        </tr>
+    </table>
+
+    <script>
+        let clicks = 0;
+        let multiplier = 1;
+        let mulCost = 100;
+
+        function updateDisplay() {
+            document.getElementById("clicks").innerHTML = "Clicks: " + clicks;
+            document.getElementById("multiplier").innerHTML = "Multiplier: " + multiplier;
+            document.getElementById("multiplierCost").innerHTML = "Multiplier Cost: " + mulCost;
+        }
+
+        function clicked() {
+            clicks += multiplier;
+            updateDisplay();
+        }
+
+        function multiplied() {
+            let mulPrompt = Number(prompt("What (whole) number would you like to increase your multiplier by?"));
+            if (!Number.isInteger(mulPrompt)) {
+                alert("Please try again, number entered was not an integer");
+                return;
+            }
+
+            if ((clicks < mulPrompt * mulCost) || (mulPrompt <= 0)) {
+                alert("Please try again, number entered was too high (or low)");
+                return;
+            }
+
+            multiplier += mulPrompt;
+            clicks -= mulPrompt * mulCost;
+            mulCost *= 2;
+            updateDisplay();
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
