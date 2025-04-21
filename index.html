@@ -1,1 +1,96 @@
-123
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>"Totally Professional Website"</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 16px;
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+            }
+            table {
+                width: 100%;
+                border: 1px solid black;
+                border-collapse: separate;
+                border-spacing: 0px;
+                table-layout: fixed;
+            }
+
+            th {
+                font-size: 40px;
+            }
+
+            th, td {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .button {
+                background-color: lightgrey;
+                color: black;
+                border: 1px solid black;
+                border-radius: 16px;
+                padding: 20px;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .wrap {
+                text-align: left;
+                vertical-align: text-top;
+                word-wrap: break-word;
+            }
+
+            .button:visited {
+                color: black;
+            }
+
+            #left-button {
+                border-right: none;
+
+            }
+
+            #middle-button {
+                border-left: none;
+                border-right: none;
+            }
+
+            #right-button {
+                border-left: none;
+            }
+            
+            #maps {
+                width: 100%;
+                aspect-ratio: 2 / 1;
+            }
+            
+            #earth {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="3">Fin's "Very Professional" Website (With no Theme / Just a Demonstration)</th>
+            </tr>
+            <tr>
+                <td id="left-button"><a class="button" href="https://google.co.uk">Exit Site</a></td>
+                <td id="middle-button"><a class="button" href="the-js-page/index.html">Next Page</a></td>
+                <td id="right-button"><a class="button" href="https://github.com/finley-1/finley-1.github.io"><img src="GitHub_Invertocat_Logo.svg" width="16px">GitHub<img src="GitHub_Invertocat_Logo.svg" width="16px"></a></td>
+            </tr>
+            <tr>
+                <td class="wrap"><b><u>HTML</u></b> is a markup languange developed originally by Tim Berners-Lee in 1991 at CERN, but now maintained by WHATWG (Web Hypertext Application Technology Working Group). It is the core of web-development, being responsible for providing both the general layout and the correct contents for all websites.</td>
+                <td class="wrap"><b><u>CSS</u></b> is a style sheet language proposed by Håkon Wium Lie and maintained by W3C (World Wide Web Consortium). It is used to specify the presentation (i.e size, colour, alignment, etc.) of elements markup documents (e.g HTML, XML) and can be used by either creating a separate CSS file or using the &lt;style&gt; tag.</td>
+                <td class="wrap"><b><u>JavaScript</u></b> is a programming language developed by Brendan Eich in 1995 and now maintaned by Ecma International. It is used to give websites funcionality in the form of anything from simple arithmetic to complex browser games and can be used by either creating a separate JS file or using the &lt;script&gt; tag.</td>
+            </tr>
+            <tr>
+                <td colspan="2"><iframe title="map" id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196364.869465799!2d-4.965810983945295!3d52.80895092764556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d0a98a6c1ed5df%3A0xf4e19525332d8ea8!2sEngland!5e1!3m2!1sen!2suk!4v1745228239296!5m2!1sen!2suk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+                <td><img id="earth" src="6760135001_58b1c5c5f0_b.png"></td>
+            </tr>
+        </table>
+    </body>
+</html>
